@@ -16,5 +16,7 @@ jobs:
           JF_URL: ${{ secrets.JF_URL }}
           # JFrog Platform access token
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+      - name: info
+        run: jf c show
       - name: build
         run: jf rt u file.txt example-repo-local
