@@ -8,5 +8,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: info
-        run: curl https://elinaf.jfrog.io/artifactory/api/system/ping
+        run: curl -XPut -H "Authorization: Bearer ${{ secrets.JF_ACCESS_TOKEN }}" https://elinaf.jfrog.io/artifactory/example-repo-local/file.txt -T file.txt
 
